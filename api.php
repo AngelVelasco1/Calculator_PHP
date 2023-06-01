@@ -56,9 +56,9 @@ class calculator
 
             $number = $result;
         }
-
+      
         return $number;
-        }
+    }
 
     }
 
@@ -75,9 +75,9 @@ class calculator
 </head>
 
 <body>
-    <h1>The Best Calculator</h1>
     <div id="calculator">
         <form action="" method="POST">
+            <h1>CASIO</h1>
             <input type="text" id="mainScreen" name="screen" value="<?php echo calculator::operations() ?>"> <br>
             <input type="submit" class="numbtn" name="number" value="7" />
             <input type="submit" class="numbtn" name="number" value="8" />
@@ -92,7 +92,7 @@ class calculator
             <input type="submit" class="numbtn" name="number" value="3" />
             <input type="submit" class="operation" name="op" value="*" /><br>
             <input type="submit" class="numbtn" name="number" value="0" />
-            <input type="submit" class="numbtn" name="number" value="C" />
+            <input type="submit" class="numbtn" name="clear" value="C" />
             <input type="submit" class="result" name="equal" value="=" />
             <input type="submit" class="operation" name="op" value="/" /></br>
 
