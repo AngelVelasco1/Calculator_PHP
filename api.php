@@ -1,13 +1,12 @@
 <?php
-/* Headers */
 $method = $_SERVER['REQUEST_METHOD'];
 
 $result = match ($method) {
-    'POST' =>  $result = (isset($_POST['equal'])) ? calculator::operations() : $_POST['screen'],
-    default => "ERROR"
+    'POST' =>  $result = (isset($_POST['equal'])) ? Calculator::operations() : $_POST['screen'],
+    default => "ERROR, uknown method"
 };
 
-class calculator
+class Calculator
 {
     public static function operations()
     {
@@ -31,7 +30,6 @@ class calculator
         if (isset($_POST['equal'])) {
             $number = $_POST['screen'];
 
-           
             $value1 = isset($_COOKIE[$numbers]) ? $_COOKIE[$numbers] : 0;
             $value2 = isset($_COOKIE[$operator]) ? $_COOKIE[$operator] : '';
 
@@ -46,7 +44,7 @@ class calculator
                     $result = $value1 * $number;
                     break;
                 case "/":
-                    $result = $value1 / $number;
+                    ($value1 == 0 || $number == 0) ? $result = "Undefined" : $result = $value1 / $number;
                     break;
                 default:
                     $result = $number;
