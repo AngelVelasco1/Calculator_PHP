@@ -2,7 +2,7 @@
 $method = $_SERVER['REQUEST_METHOD'];
 
 $result = match ($method) {
-    'POST' =>  $result = (isset($_POST['equal'])) ? Calculator::operations() : $_POST['screen'],
+    'POST' => $result = (isset ($_POST['equal'])) ? Calculator::operations() : $_POST['screen'],
     default => "ERROR, uknown method"
 };
 
@@ -15,8 +15,8 @@ class Calculator
         $value1 = "";
         $value2 = "";
 
-        $number =(isset($_POST['number'])) ? $number = $_POST['screen'] . $_POST['number'] : $number = "";
-        
+        $number = (isset($_POST['number'])) ? $number = $_POST['screen'] . $_POST['number'] : $number = "";
+
         if (isset($_POST['op'])) {
             $value1 = $_POST['screen'];
             setcookie($numbers, $value1);
@@ -44,7 +44,7 @@ class Calculator
                     $result = $value1 * $number;
                     break;
                 case "/":
-                    ($value1 == 0 || $number == 0) ? $result = "Undefined" : $result = $value1 / $number;
+                    ($number == 0) ? $result = "Undefined" : $result = $value1 / $number;
                     break;
                 default:
                     $result = $number;
@@ -52,12 +52,10 @@ class Calculator
 
             $number = $result;
         }
-      
         return $number;
     }
 
-    }
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
