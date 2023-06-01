@@ -2,6 +2,9 @@
     font-family: system-ui;
     font-weight: bold;
 }
+body {
+    background-color: antiquewhite;
+}
 #calculator {
     background-color: rgb(155, 153, 255);
     max-width: 300px;
@@ -25,6 +28,10 @@ form input {
     cursor: pointer;
     background-color: rgba(8, 0, 51, 0.904);
     color: white;
+
+}
+form input:hover {
+    background-color: rgba(255, 255, 255, 0.733)
 
 }
 .operation {
