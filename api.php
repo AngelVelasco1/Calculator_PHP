@@ -2,13 +2,10 @@
 /* Headers */
 $method = $_SERVER['REQUEST_METHOD'];
 
-switch ($method) {
-    case 'POST':
-        $result = (isset($_POST['equal'])) ? calculator::operations() : $_POST['screen'];
-        break;
-    default:
-        echo "ERROR";
-}
+$result = match ($method) {
+    'POST' =>  $result = (isset($_POST['equal'])) ? calculator::operations() : $_POST['screen'],
+    default => "ERROR"
+};
 
 class calculator
 {
@@ -20,6 +17,7 @@ class calculator
         $value2 = "";
 
         $number =(isset($_POST['number'])) ? $number = $_POST['screen'] . $_POST['number'] : $number = "";
+        
         if (isset($_POST['op'])) {
             $value1 = $_POST['screen'];
             setcookie($numbers, $value1);
