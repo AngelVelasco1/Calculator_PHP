@@ -3,7 +3,7 @@
     font-weight: bold;
 }
 body {
-    background-color: rgb(155, 153, 255);
+    background-color: rgb(1, 0, 53);
 }
 #calculator {
     background-color: rgb(155, 153, 255);
@@ -31,7 +31,7 @@ form input {
 
 }
 form input:hover {
-    background-color: rgba(20, 12, 63, 0.836);
+    background-color: rgb(37, 21, 110);
 
 }
 .operation {
